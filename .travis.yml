@@ -19,6 +19,7 @@ script:
 #   - pipenv install
 
 script:
-  - python3 -m unittest
-  - mypy complex_number/
-  - flake8 tests/ complex_number/
+  - pytest tests
+  - mypy imaginary_number/
+  - flake8 tests/ imaginary_number/
+
