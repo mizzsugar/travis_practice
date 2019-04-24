@@ -8,7 +8,7 @@ dist: xenial
 
 before_install:
   - docker build -t sample docker/
-  - docker sudo docker run -it --rm --name py_container -v `pwd`:/var/src sample
+  - docker run -it --rm --name py_container -v `pwd`:/var/src sample
 
 script:
   - docker ps -a
