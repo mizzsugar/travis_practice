@@ -1,0 +1,24 @@
+sudo: required
+
+language: python
+
+python:
+  - "3.7"
+dist: xenial
+
+before_install:
+  - docker build -t sample docker/
+  - docker sudo docker run -it --rm --name py_container -v `pwd`:/var/src sample
+
+script:
+  - docker ps -a
+
+
+# before_install:
+#   - pip install pipenv
+#   - pipenv install
+
+script:
+  - python3 -m unittest
+  - mypy complex_number/
+  - flake8 tests/ complex_number/
