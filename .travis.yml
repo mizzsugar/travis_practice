@@ -7,19 +7,10 @@ python:
 dist: xenial
 
 before_install:
-  - docker build -t sample docker/
-  - docker run -it --rm --name py_container -v `pwd`:/var/src sample
-
-script:
-  - docker ps -a
-
-
-# before_install:
-#   - pip install pipenv
-#   - pipenv install
+  - pip install poetry
+  - poetry install
 
 script:
   - pytest tests
   - mypy imaginary_number/
   - flake8 tests/ imaginary_number/
-
