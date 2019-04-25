@@ -9,4 +9,4 @@ from imaginary_number.imaginary_number import PurelyImaginaryNumber
     ])
 def test_stringify(num, expected):
     purely_imaginary_number = PurelyImaginaryNumber(num)
-    assert expected==str(purely_imaginary_number)
+    assert expected == str(purely_imaginary_number)
